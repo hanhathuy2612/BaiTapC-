@@ -1,0 +1,16 @@
+CREATE DATABASE SINHVIEN7
+USE	SINHVIEN7
+
+CREATE TABLE Falculty(
+	FacultyID INT PRIMARY KEY,
+	FacultyName NVARCHAR(200)
+)
+CREATE TABLE Student(
+	StudentID INT PRIMARY KEY,
+	FullName NVARCHAR(200),
+	AverageScore FLOAT,
+	FacultyID INT,
+	CONSTRAINT PK_FacultyID FOREIGN KEY (FacultyID) REFERENCES dbo.Falculty(FacultyID)
+)
+SELECT * FROM	dbo.Student
+SELECT * FROM Falculty where FacultyName='CNTT'
